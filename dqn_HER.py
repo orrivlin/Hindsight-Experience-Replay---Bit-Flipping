@@ -48,12 +48,6 @@ class DQN_HER:
         
         self.replay_buffer = deque(maxlen=buffer_size)
         
-    def HER(self,X):
-        Y = X
-        Y[2,:,:] = X[1,:,:]
-        reward = 1.0
-        return Y, reward
-        
     def run_episode(self,grid):
         self.her.reset()
         state, done = self.env.reset()
